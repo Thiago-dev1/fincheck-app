@@ -22,6 +22,18 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "scheme": "fincheck",
+    "plugins": [
+      [
+        "expo-router",
+        {
+          "root": "app"
+        }
+      ]
+    ]
+  },
+  "experiments": {
+    "typedRoutes": true
   }
 }
