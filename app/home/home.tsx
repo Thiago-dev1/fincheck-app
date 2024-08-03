@@ -1,11 +1,13 @@
 import { Link } from 'expo-router';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { useAuth } from '../../src/hooks/useAuth';
 
 export default function HomeScreen() {
+    const { user } = useAuth();
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Home Screen</Text>
+            <Text style={styles.text}>Home Screen {user.name}</Text>
             <Link href="/home/edit" style={styles.link}>Go to Edit</Link>
             <Link href="/home/profile" style={styles.link}>Go to Profile</Link>
         </View>

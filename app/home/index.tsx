@@ -5,30 +5,33 @@ export default function HomeTabs() {
     return (
         <Tabs>
             <Tabs.Screen
-                name="home/home"
+                name="home"
                 options={{
                     tabBarLabel: 'Home',
                     tabBarIcon: ({ color, size }) => (
                         <Ionicons name="home" size={size} color={color} />
                     ),
+                    headerShown: false,
                 }}
             />
             <Tabs.Screen
-                name="home/edit"
+                name="edit"
                 options={{
                     tabBarLabel: 'Edit',
                     tabBarIcon: ({ color, size }) => (
                         <Ionicons name="create" size={size} color={color} />
                     ),
+                    headerShown: false,
                 }}
             />
             <Tabs.Screen
-                name="home/profile"
+                name="profile"
                 options={{
                     tabBarLabel: 'Profile',
                     tabBarIcon: ({ color, size }) => (
                         <Ionicons name="person" size={size} color={color} />
                     ),
+                    headerShown: false,
                 }}
             />
         </Tabs>
