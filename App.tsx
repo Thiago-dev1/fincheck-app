@@ -5,26 +5,29 @@ import {
   useFonts
 } from '@expo-google-fonts/dm-sans';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { SafeAreaView, StyleSheet, View } from 'react-native';
+import { Input } from './src/components/Input';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
     'DMSans-400': DMSans_400Regular,
     'DMSans-500': DMSans_500Medium,
     'DMSans-700': DMSans_700Bold,
-  });
+  })
 
   if (!fontsLoaded) {
     return null;
   }
 
   return (
-    <View style={styles.container}>
-      <Text>Thiago</Text>
-      <Text style={{ fontFamily: 'DMSans-400' }}>Thiago</Text>
-      <Text style={{ fontFamily: 'DMSans-700' }}>Thiago</Text>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.containerForm}>
+        <Input label="E-mail" inputProps={{ placeholder: 'Enter your e-mail', keyboardType: 'email-address' }} />
+        <Input label="Password" inputProps={{ placeholder: 'Enter your password', secureTextEntry: true }} />
+      </View>
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -35,4 +38,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+
+  containerForm: {
+
+    width: '80%',
+    height: '50%',
+    gap: 8
+  }
+})
