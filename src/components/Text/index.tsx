@@ -5,7 +5,7 @@ interface TextComponent extends TextProps {
   color?: string;
   size?: number;
   opacity?: number;
-  children: string;
+  children: string | string[] | React.ReactNode;
 }
 
 

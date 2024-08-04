@@ -13,13 +13,13 @@ export function NavigationLinks() {
     return (
         <View style={styles.container}>
             <Link href="/home/home" style={styles.link}>
-                <Ionicons name="home" size={20} color={currentSegment === 'home' ? '#087F5B' : 'white'} />
+                <Ionicons name="home" size={20} color={currentSegment === 'home' ? '#087F5B' : 'black'} />
             </Link>
             <Link href="/home/edit" style={styles.link}>
-                <Ionicons name="create" size={20} color={currentSegment === 'edit' ? '#087F5B' : 'white'} />
+                <Ionicons name="create" size={20} color={currentSegment === 'edit' ? '#087F5B' : 'black'} />
             </Link>
             <Link href="/home/profile" style={styles.link}>
-                <Ionicons name="person" size={20} color={currentSegment === 'profile' ? '#087F5B' : 'white'} />
+                <Ionicons name="person" size={20} color={currentSegment === 'profile' ? '#087F5B' : 'black'} />
             </Link>
         </View>
     );
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         width: '100%',
-        backgroundColor: '#1A1A1A',
+        backgroundColor: '#fff',
         padding: 10,
     },
 
