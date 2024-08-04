@@ -1,9 +1,12 @@
+import { jwtDecode } from "jwt-decode";
 import { createContext, ReactNode, useState } from "react";
 import { api } from "../../ services/api";
+import { saveToken } from "../../ services/tokenService";
 
 
 interface UserProps {
     name: string;
+    email: string;
     avatarUrl: string;
 }
 
@@ -35,16 +38,18 @@ export function AuthContextProvider({ children }: AuthContextProviderProps) {
                 email: 'thiagooo@gmail.com',
                 password: '123456'
             })
-            // const accessToken = response.data.accessToken
-            // const decodedToken = JSON.parse(atob(accessToken.split('.')[1]))
-            console.log(response)
-
+            const accessToken = response.data.accessToken
+            const decodedToken = jwtDecode<{ email: string, name: string }>(accessToken)
+            console.log(decodedToken)
             const user = {
-                name: 'John Doe',
+                name: decodedToken.name,
+                email: decodedToken.email,
                 avatarUrl: ''
             }
 
             setUser(user)
+
+            await saveToken(accessToken);
 
         } catch (error) {
             console.log(JSON.stringify(error))
