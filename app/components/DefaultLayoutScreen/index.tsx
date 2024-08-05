@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { TextComponent } from "../../../../src/components/Text";
+import { TextComponent } from "../../../src/components/Text";
 import { NavigationLinks } from "../NavigationLinks";
 
 interface DefaultLayoutScreenProps {

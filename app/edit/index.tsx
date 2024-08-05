@@ -1,5 +1,5 @@
 import React from 'react';
-import { DefaultLayoutScreen } from './components/DefaultLayoutScreen';
+import { DefaultLayoutScreen } from '../components/DefaultLayoutScreen';
 
 export default function EditScreen() {
     return (

@@ -8,17 +8,15 @@ export function NavigationLinks() {
 
     const currentSegment = segments[segments.length - 1];
 
-
-
     return (
         <View style={styles.container}>
-            <Link href="/home/home" style={styles.link}>
+            <Link href="/home" style={styles.link}>
                 <Ionicons name="home" size={20} color={currentSegment === 'home' ? '#087F5B' : 'black'} />
             </Link>
-            <Link href="/home/edit" style={styles.link}>
+            <Link href="/edit" style={styles.link}>
                 <Ionicons name="create" size={20} color={currentSegment === 'edit' ? '#087F5B' : 'black'} />
             </Link>
-            <Link href="/home/profile" style={styles.link}>
+            <Link href="/profile" style={styles.link}>
                 <Ionicons name="person" size={20} color={currentSegment === 'profile' ? '#087F5B' : 'black'} />
             </Link>
         </View>
